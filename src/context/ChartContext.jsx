@@ -1,0 +1,31 @@
+import { createContext, useContext,  } from "react";
+import useChart from "../hooks/UseChart";
+
+//1. creo el context
+const ChartContext = createContext ()
+
+//2. creo es provedor del context
+export const ChartProvider = ({children }) =>{
+   const {} = useChart()
+
+    return(
+        <ChartContext.Provider
+        value={{}}
+        
+        >
+        { children }
+        </ChartContext.Provider>
+    )
+}
+
+//3. Hook para usar el context en los componentes
+
+export const useChartContext = () => {
+    const context = useContext (ChartContext)
+
+    if(!context){
+        throw new Error ("useChartContext debe usarse dentro de un ChartProvider")
+    }
+    return context
+}
+
