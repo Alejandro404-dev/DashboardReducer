@@ -6,10 +6,10 @@ export const initialState = {
 
 //reducer function. nos sirve para manejar las acciones de creacion, actualizacion y eliminacion de graficos
 
-export const dashboardReducer = (state, action ) => {
+export const dashboardReducer = (state, action) => {
+
 
     
-
 
     return state
 }
