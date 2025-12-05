@@ -1,18 +1,18 @@
 import ReactApexChart from "react-apexcharts"
 
 
-export default function ApexChartEnlace() {
+export default function ApexChartEnlace({datagrafico}) {
+
+ const{tipo,series} = datagrafico
 
 const options = {
   chart: {
-    type: 'bar' //tipo de grafico
+    type: tipo //tipo de grafico
   },
-  series: [{
-    name: 'sales',//nombre de la serie
-    data: [30,40,35,50,49,60,70,91,125] //datos para graficar
-  }],
+  series: series, //datos del grafico
   xaxis: {
-    categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999] //categorias del eje x
+    type: 'datetime',
+    labels:{ formaT: 'dd/MM/yy'}
   }
 }
 
@@ -24,7 +24,7 @@ const options = {
         <ReactApexChart
             options={options}
             series={options.series}
-            type="bar"      
+            type={tipo}      
         />
        
 

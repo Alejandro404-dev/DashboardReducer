@@ -8,6 +8,34 @@ export const initialState = {
 
 export const dashboardReducer = (state, action) => {
 
+    if(action.type === "crear_grafico"){
+        console.log("los datos ya se encuentran en el reducer: ", action.payload)
+        return{
+            ...state,
+            datos: [
+                ...state.datos,
+                action.payload
+            ]
+        }
+    }
+
+
+    if(action.type === "remove_chart"){
+        return{
+            ...state,
+            datos: state.datos.filter(grafico => grafico.id !== action.payload)
+        }
+        
+    }
+
+    if(action.type === 'actualizar_grafico'){
+        return {
+            ...state,
+            datos: state.datos.map((grafico)=> grafico.id === action.payload.id ? {...grafico,...action.payload } : grafico )
+        }
+
+    }
+
 
     
 

@@ -1,8 +1,12 @@
+
 import ApexChartEnlace from "./components/ApexChartEnlace"
 import { EditorGraficos } from "./components/EditorGraficos"
 import { FormularioPrincipal } from "./components/FormularioPrincipal"
+import { useChartContext } from "./context/ChartContext"
 
 function App() {
+
+  const {state } = useChartContext()
 
 
   return (
@@ -28,27 +32,19 @@ function App() {
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-8 justify-center  " >
-        <div className=" rounded shadow-xl p-5 bg-slate-200 text-center " >
-          <h2 className=" text-center font-bold pb-2 " >Grafico 1</h2>
+        {state.datos.map( (grafico) => (
+        <div 
+          key={grafico.id}
+          className=" rounded shadow-xl p-5 bg-slate-200 text-center " 
+        >
+          <h2 className=" text-center font-bold pb-2 " >{grafico.titulo } </h2>
           <div className=" flex justify-center shadow-xl " >
-            <ApexChartEnlace />
+            <ApexChartEnlace
+            datagrafico={grafico}
+            />
           </div>
-
         </div>
-        <div className=" rounded shadow-xl p-5 bg-slate-200 text-center " >
-          <h2 className=" text-center font-bold pb-2 " >Grafico 2</h2>
-          <div className=" flex justify-center shadow-xl " >
-            <ApexChartEnlace />
-          </div>
-
-        </div>
-        <div className=" rounded shadow-xl p-5 bg-slate-200 text-center " >
-          <h2 className=" text-center font-bold pb-2 " >Grafico 3</h2>
-          <div className=" flex justify-center shadow-xl " >
-            <ApexChartEnlace />
-          </div>
-
-        </div>
+        ))}
       </div>
 
     </div>
