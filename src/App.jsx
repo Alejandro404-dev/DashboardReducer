@@ -2,12 +2,15 @@
 import ApexChartEnlace from "./components/ApexChartEnlace"
 import { EditorGraficos } from "./components/EditorGraficos"
 import { FormularioPrincipal } from "./components/FormularioPrincipal"
+import ResetearAplicacion from "./components/ResetearAplicacion"
 import { useChartContext } from "./context/ChartContext"
+import useModal from "./hooks/useModal"
 
 function App() {
 
   const {state } = useChartContext()
 
+  const {isOpen: isResetModalOpen ,openModal:openResetModal ,closeModal:closeResetModal } = useModal()
 
   return (
     <div className="w-4/5 mx-auto">
@@ -20,9 +23,16 @@ function App() {
         <button
           type="button"
           className="bg-red-500 hover:bg-red-700 rounded p-2 text-white hover:cursor-pointer shadow-lg "
+          onClick={openResetModal}
         >
           Resetear Aplicacion
         </button>
+
+        {isResetModalOpen && 
+          <ResetearAplicacion
+            onClose={closeResetModal}
+          />
+        }
 
       </div>
       
