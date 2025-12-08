@@ -7,13 +7,13 @@ import useModal from "../hooks/useModal"
 
 export const EditorGraficos = () => {
 
-  const { state, actualizarGrafico } = useChartContext()
+  const { state, actualizarGrafico,eliminarGrafico } = useChartContext()
 
   const [selectorTitulo, setSelectorTitulo] = useState('')
   const [valorGrafico,setValorGrafico] = useState(0)
   const [fecha,setFecha] = useState(new Date())
 
-  const {isOpen: isOpenModalEliminar, openModal:openModalModalElimiar , closeModal:closeModalEliminar  } = useModal()
+  const {isOpen: isOpenModalEliminar, openModal:openModalModalElimiar , closeModal:closeModalModalEliminar  } = useModal()
 
   const listaGrafico = state.datos
 
@@ -112,8 +112,9 @@ export const EditorGraficos = () => {
 
         {isOpenModalEliminar && 
         <ModalEliminar
-          conClose={closeModalEliminar}
-        
+          onClose={closeModalModalEliminar}
+          selectorTitulo={selectorTitulo}
+          eliminarGrafico={eliminarGrafico}
         />
         }
 

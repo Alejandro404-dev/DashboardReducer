@@ -70,7 +70,7 @@ export  const FormularioPrincipal = () => {
 
                 <input
                     type="date"
-                    className=" w-44 m-5 p-1 rounded shadow-lg border focus:shadow-slate-400 focus:outline-none "
+                    className=" w-44 m-5 p-1 rounded shadow-lg border focus:shadow-slate-400 focus:outline-none  "
                     value={fecha.toISOString().split("T")[0]}
                     onChange={(e) => setFecha(new Date(e.target.value))}
                 />

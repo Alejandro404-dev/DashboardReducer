@@ -24,8 +24,8 @@ export const UseChart = () => {
 
   }
 
-  const removeGrafico = (graficoId)=>{
-    dispatch( {type: 'remove_chart',payload: graficoId} )
+  const eliminarGrafico = (id) => {
+    dispatch({type: 'eliminar_grafico',payload: {id} })
 
   }
 
@@ -33,8 +33,8 @@ export const UseChart = () => {
   return {
     state,
     agregarGrafico,
-    removeGrafico,
-    actualizarGrafico
+    actualizarGrafico,
+    eliminarGrafico
 
   }
 }

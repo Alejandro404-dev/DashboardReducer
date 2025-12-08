@@ -9,11 +9,11 @@ const ChartContext = createContext ()
 
 //2. creo el provedor del context
 export const ChartProvider = ({children }) =>{
-   const { state, agregarGrafico, actualizarGrafico } = UseChart()
+   const { state, agregarGrafico, actualizarGrafico,eliminarGrafico } = UseChart()
 
     return(
         <ChartContext.Provider
-        value={{ state, agregarGrafico, actualizarGrafico }}
+        value={{ state, agregarGrafico, actualizarGrafico,eliminarGrafico }}
         
         >
         { children }

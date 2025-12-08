@@ -20,14 +20,6 @@ export const dashboardReducer = (state, action) => {
     }
 
 
-    if(action.type === "remove_chart"){
-        return{
-            ...state,
-            datos: state.datos.filter(grafico => grafico.id !== action.payload)
-        }
-        
-    }
-
     if(action.type === 'actualizar_grafico'){
         return {
             ...state,
@@ -36,7 +28,15 @@ export const dashboardReducer = (state, action) => {
 
     }
 
+    if (action.type === 'eliminar_grafico' ) {
+        return {
+            ...state,
+            datos: state.datos.filter( grafico => grafico.id !== action.payload.id  )
+        }
+        
+    }
 
+   
     
 
     return state

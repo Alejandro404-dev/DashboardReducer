@@ -17,8 +17,6 @@ const options = {
 }
 
 
-
-
   return (
     <div>
         <ReactApexChart
