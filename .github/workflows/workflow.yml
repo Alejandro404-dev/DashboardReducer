@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3  # Actualiza a la versión v3 de setup-node
         with:
-          node-version: 18
+          node-version: 20
  
       # Paso 3 - Instalar dependencias
       - name: Install dependencies

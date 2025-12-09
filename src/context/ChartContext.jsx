@@ -1,5 +1,5 @@
 import { createContext, useContext,  } from "react";
-import { UseChart } from "../hooks/UseChart";
+import { useChart } from "../hooks/UseChart";
 
 
 
@@ -9,7 +9,7 @@ const ChartContext = createContext ()
 
 //2. creo el provedor del context
 export const ChartProvider = ({children }) =>{
-   const { state, agregarGrafico, actualizarGrafico,eliminarGrafico } = UseChart()
+   const { state, agregarGrafico, actualizarGrafico,eliminarGrafico } = useChart()
 
     return(
         <ChartContext.Provider
