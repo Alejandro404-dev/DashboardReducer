@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react"
 import { dashboardReducer, initialState } from "../reducers/ChartReducer"
 
 
-export const UseChart = () => {
+export const useChart = () => {
   const [state, dispatch] = useReducer(dashboardReducer, initialState)
   const [graficosCargados, setGraficosCargados] = useState(false)
   const ids = new Set();

@@ -1,5 +1,5 @@
 import { createContext, useContext,  } from "react";
-import { useChart } from "../hooks/UseChart";
+import { useChart } from "../hooks/useChart";
 
 
 
